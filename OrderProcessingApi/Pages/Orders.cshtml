@@ -1,0 +1,96 @@
+﻿@page
+@model OrdersModel
+@{
+    ViewData["Title"] = "Orders";
+}
+<h2>@ViewData["Title"]</h2>
+
+<a asp-page="/Orders" class="btn btn-secondary">Refresh Orders</a>
+
+<form method="post" asp-page-handler="PlaceOrder">
+    @Html.AntiForgeryToken()
+    <div>
+        <label asp-for="OrderItem.ProductId"></label>
+        <input asp-for="OrderItem.ProductId" />
+    </div>
+    <div>
+        <label asp-for="OrderItem.Quantity"></label>
+        <input asp-for="OrderItem.Quantity" type="number" />
+    </div>
+    <button type="submit">Place Order</button>
+</form>
+
+<hr />
+
+<form method="post" asp-page-handler="CancelOrder">
+    @Html.AntiForgeryToken()
+    <div>
+        <label>Order ID to Cancel:</label>
+        <input name="OrderIdToCancel" />
+    </div>
+    <button type="submit">Cancel Order</button>
+</form>
+
+<hr />
+
+<form method="get" action="/Orders">
+    <input type="hidden" name="handler" value="CheckStatus" />
+    <div>
+        <label asp-for="OrderIdToCheck">Order ID to Check:</label>
+        <input asp-for="OrderIdToCheck" />
+    </div>
+    <button type="submit">Check Status</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.OrderStatus))
+{
+    <p>Order Status: <strong>@Model.OrderStatus</strong></p>
+}
+
+@if (Model.OrderId != Guid.Empty)
+{
+    <p>Order placed successfully! Your Order ID is: <strong>@Model.OrderId</strong></p>
+    <p>Order Status: @Model.OrderStatus</p>
+}
+
+<!-- Display all placed orders -->
+<h3>Placed Orders</h3>
+@if (Model.Orders.Any())
+{
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Status</th>
+                <th>Created At</th>
+                <th>Items</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.Orders)
+            {
+                <tr>
+                    <td>@order.Id</td>
+                    <td>@order.Status</td>
+                    <td>@order.CreatedAt</td>
+                    <td>
+                        <ul>
+                            @foreach (var item in order.Items)
+                            {
+                                <li>Product: @item.ProductId, Qty: @item.Quantity</li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No orders have been placed.</p>
+}
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+

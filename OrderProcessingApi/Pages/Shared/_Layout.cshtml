@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Order Processing Application</title>
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/Index">Home</a>
+            <a href="/Products">Products</a>
+            <a href="/Orders">Orders</a>
+        </nav>
+    </header>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <footer>
+        <p>&copy; 2023 - Order Processing Application</p>
+    </footer>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
