@@ -48,6 +48,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseCors("AllowAngular");
 app.UseRouting();
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 
