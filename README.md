@@ -100,3 +100,54 @@ Client → API Controllers → Services → Repositories → EF Core (In-Memory 
 ├── Background (OrderFulfillmentWorker.cs)
 ├── Notifications (Simulated Notification Service)
 ├── Tests (xUnit + Moq)
+
+## ✅ Technical Skills Used
+🧱 Backend Development
+- ASP.NET Core Web API
+- C# (Object-Oriented Programming)
+- Entity Framework Core (EF Core)
+- LINQ for querying data
+- Dependency Injection (Built-in .NET DI Container)
+
+## ⚙️ Software Architecture & Design
+- SOLID Principles
+- Clean Architecture / Layered Architecture
+- Repository Pattern
+- Separation of Concerns
+- Asynchronous Programming (async/await)
+- Hosted Services for background processing
+
+## 🔄 Concurrency & Transactions
+- Inventory safety using:
+- Thread-safe design
+- Database transactions
+- Optimistic concurrency (using RowVersion in EF Core)
+
+## 🧪 Testing & Quality Assurance
+- Unit Testing with xUnit
+- Mocking dependencies with Moq
+- Testing business logic, concurrency, and async behavior
+
+## 📦 API Design & REST Principles
+- RESTful endpoints for:
+- Product management
+- Order management
+- Proper usage of HTTP verbs and status codes
+- Model validation and request handling
+
+## 🔧 Error Handling & Logging
+- Centralized error handling using Middleware
+- Simulated notification logging (extendable to Serilog, NLog, etc.)
+
+## 🛠️ Tooling & Productivity
+- .NET CLI
+- Swagger/OpenAPI for testing endpoints
+- Git/GitHub for version control and collaboration
+
+## 🧠 Soft Skills Demonstrated
+- System Design Thinking – From requirements to scalable architecture
+- Problem Solving – Concurrency, async logic, and validation challenges
+- Attention to Detail – Handling edge cases, error states, and test scenarios
+- Communication – Through clear documentation and code readability
+- Time Management – Delivering functional modules independently
+- Adaptability – Applying best practices and extending logic cleanly
