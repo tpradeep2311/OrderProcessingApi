@@ -87,7 +87,6 @@ Client → API Controllers → Services → Repositories → EF Core (In-Memory 
   - Fulfillment logic
   - Notification triggering
   - Concurrent order simulation
-  - 
 
 ## 🧱 Project Structure
 ├── Controllers
