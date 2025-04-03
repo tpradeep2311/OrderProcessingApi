@@ -2,7 +2,7 @@
 
 A lightweight e-commerce backend built using **ASP.NET Core Web API** that supports product management, order processing, inventory tracking, and asynchronous order fulfillment.
 
-Visit site : [here](https://bit.ly/orderprocessingapp) 
+Visit Order Processing site : [here](https://orderprocessingapi20250403012743-cxf3gyg6bqhye9ef.canadacentral-01.azurewebsites.net/Products) 
 
 ---
 
